@@ -3,7 +3,7 @@ const Pool = pg.Pool;
 const pool = new Pool({
   host: 'localhost',
   port: '5432',
-  database: 'projects',
+  database: 'weekend5',
   max: 10,
   idleTimeoutMillis: 30000
 })

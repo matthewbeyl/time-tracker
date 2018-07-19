@@ -7,6 +7,6 @@ app.use(express.static('server/public'));
 
 app.use('/entries', entriesRouter);
 
-app.listen(PORT, function(){
+app.listen(PORT, function () {
     console.log('App running on port ', PORT);
 })
