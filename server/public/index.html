@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +20,26 @@
     <!-- CSS -->
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body ng-app="timeApp">
-    <h1>THIS IS WHERE THE GOOD STUFF WILL GO</h1>
+    <div ng-controller="EntryController as vm" class="container">
+        <h1>THIS IS WHERE THE GOOD STUFF WILL GO</h1>
+        <br>
+        <hr>
+        <h3>Make Entry</h3>
+        <div class="form">
+            <input ng-model="vm.newEntry.title" type="text" placeholder="title">
+            <input ng-model="vm.newEntry.description" type="text" placeholder="Project Details...">
+            <!-- <select name="Project" id="projectSelector">
+                <option value="filler1">filler1</option>
+                <option value="filler2">filler2</option>
+                <option value="filler3">filler3</option>
+            </select> -->
+            <input ng-model="vm.newEntry.date" type="text" placeholder="mm/dd/yyyy">
+            <input ng-model="vm.newEntry.time" type="text" placeholder="Time Spent (hrs)">
+            <button ng-click="vm.addEntry(newEntry)">ADD</button>
+        </div>
+    </div>
 </body>
+
 </html>

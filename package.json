@@ -19,6 +19,7 @@
     "angular-route": "^1.7.2",
     "angular-router": "0.0.2",
     "express": "^4.16.3",
-    "material": "^0.3.0"
+    "material": "^0.3.0",
+    "pg": "^7.4.3"
   }
 }
