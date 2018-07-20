@@ -32,5 +32,19 @@ app.controller('EntryController', ['$http', function ($http) {
         })
     }
 
+    self.deleteEntry = function (id) {
+        console.log(id);
+        $http({
+            url: `/entries/${id}`,
+            method: 'DELETE'
+        }).then(function (response) {
+            console.log(response);
+            self.getEntries();
+        }).catch(function (error) {
+            console.log('Error on Delete', error)
+        })
+    }
+
+
     self.getEntries();
 }])
