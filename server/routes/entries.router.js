@@ -14,10 +14,9 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     console.log('Router POST');
     console.log(req.body);
-    const entry = req.body;
     pool.query(`INSERT INTO "projects"
     ("title", "description", "date", "time")
-    VALUES ($1, $2, $3, $4, $5);`, [entry.title, entry.description, entry.date, entry.time])
+    VALUES ($1, $2, $3, $4);`, [req.body.title, req.body.description, req.body.date, req.body.time])
         .then((results) => {
             console.log(results);
             res.sendStatus(201);

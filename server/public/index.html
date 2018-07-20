@@ -37,12 +37,12 @@
             </select> -->
             <input ng-model="vm.newEntry.date" type="text" placeholder="mm/dd/yyyy">
             <input ng-model="vm.newEntry.time" type="text" placeholder="Time Spent (hrs)">
-            <button ng-click="vm.addEntry(newEntry)">ADD</button>
+            <button ng-click="vm.addEntry(vm.newEntry)">ADD</button>
         </div>
 
 
         <div>
-            <table class="table">
+            <table>
                 <thead>
                     <tr>
                         <th>Project</th>
