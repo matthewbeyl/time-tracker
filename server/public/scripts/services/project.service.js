@@ -10,7 +10,7 @@ app.service('ProjectService', ['$http', function ($http) {
         console.log('Adding Entry: ', entryToAdd);
         $http({
             method: 'POST',
-            url: '/entries',
+            url: '/',
             data: entryToAdd,
         }).then(function (response) {
             console.log(response);
@@ -21,9 +21,9 @@ app.service('ProjectService', ['$http', function ($http) {
     }
 
     self.getEntries = function () {
-        $http({
+        $http.get({
             method: 'GET',
-            url: '/entries',
+            url: '/',
         }).then(function (response) {
             console.log(response);
             self.entryList = response.data;
@@ -35,7 +35,7 @@ app.service('ProjectService', ['$http', function ($http) {
     self.deleteEntry = function (id) {
         console.log(id);
         $http({
-            url: `/entries/${id}`,
+            url: `/${id}`,
             method: 'DELETE'
         }).then(function (response) {
             console.log(response);

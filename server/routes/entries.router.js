@@ -2,6 +2,8 @@
 // const router = express.Router();
 // const pool = require('../modules/pool');
 
+
+
 // router.get('/', (req, res) => {
 //     console.log('Router GET');
 //     pool.query(`SELECT * FROM "projects";`)
@@ -9,6 +11,10 @@
 //             console.log(results);
 //             res.send(results.rows)
 //         })
+// });
+
+// router.get('/entry', (req, res) => {
+//     res.send(getEntries());
 // });
 
 // router.post('/', (req, res) => {

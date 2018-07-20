@@ -3,7 +3,7 @@ const app = angular.module('timeApp', ['ngRoute']);
 
 app.config(function ($routeProvider){
     $routeProvider.when('/', {
-        templateUrl: '/views/entry.html',
+        templateUrl: '/views/home.html',
         contoller: 'EntryController as vm'
     }).when( '/entry', {
         templateUrl: '/views/entry.html', //either works
