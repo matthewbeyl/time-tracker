@@ -20,11 +20,11 @@ app.service('ProjectService', ['$http', function ($http) {
     }
 
     self.addProject = function (projectToAdd) {
-        console.log('Adding Project: ', projectToAdd);
+        console.log(`Adding Project: `, projectToAdd);
         $http({
             method: 'POST',
-            url: '/',
-            data: eprojectToAdd,
+            url: '/projects',
+            data: projectToAdd,
         }).then(function (response) {
             console.log(response);
             self.getProjects();
@@ -57,7 +57,7 @@ app.service('ProjectService', ['$http', function ($http) {
         
         console.log(id);
         $http({
-            url: `/entries/${id}`,
+            url: `/projects/${id}`,
             method: 'DELETE'
         }).then(function (response) {
             console.log(response);
