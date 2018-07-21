@@ -57,11 +57,26 @@ app.service('ProjectService', ['$http', function ($http) {
         
         console.log(id);
         $http({
-            url: `/projects/${id}`,
+            url: `/entries/${id}`,
             method: 'DELETE'
         }).then(function (response) {
             console.log(response);
             self.getEntries();
+        }).catch(function (error) {
+            console.log('Error on Delete', error)
+        })
+    }
+
+    self.deleteProject = function (id) {
+        console.log('delete clicked');
+        
+        console.log(id);
+        $http({
+            url: `/projects/${id}`,
+            method: 'DELETE'
+        }).then(function (response) {
+            console.log(response);
+            self.getProjects();
         }).catch(function (error) {
             console.log('Error on Delete', error)
         })
