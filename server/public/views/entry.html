@@ -1,14 +1,10 @@
-<h2>Make new entry</h2>
+<h2>New Entry</h2>
 
 <div class="form">
-    <input ng-model="vm.newEntry.title" type="text" placeholder="title">
-    <input ng-model="vm.newEntry.description" type="text" placeholder="Project Details...">
-    <!-- <select name="Project" id="projectSelector">
-    <option value="filler1">filler1</option>
-    <option value="filler2">filler2</option>
-    <option value="filler3">filler3</option>
-</select> -->
-    <input ng-model="vm.newEntry.date" type="text" placeholder="mm/dd/yyyy">
+    <input ng-model="vm.newEntry.notes" type="text" placeholder="Project Details...">
+    <select ng-model="vm.newEntry.project_id"></select>
+        <option ng-repeat="project in vm.projectList.result" value="{{project.id}}">{{project.name}}</option>
+    <input ng-model="vm.newEntry.date" type="date">
     <input ng-model="vm.newEntry.time" type="text" placeholder="Time Spent (hrs)">
     <button ng-click="vm.addEntry(vm.newEntry)">ADD</button>
 </div>
@@ -17,16 +13,16 @@
     <table>
         <thead>
             <tr>
+                <th>Notes</th>
                 <th>Project</th>
-                <th>Description</th>
                 <th>Date</th>
                 <th>Time</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="entry in vm.entryList">
-                <td>{{entry.title}}</td>
-                <td>{{entry.description}}</td>
+            <tr ng-repeat="entry in vm.entryList.result">
+                <td>{{entry.notes}}</td>
+                <td>{{entry.project}}</td>
                 <td>{{entry.date}}</td>
                 <td>{{entry.time}}</td>
                 <td>

@@ -1,10 +1,9 @@
 app.service('ProjectService', ['$http', function ($http) {
     let self = this;
-    console.log('Project Service Started');
+    // console.log('Project Service Started');
 
-    self.entryList = {
-        result: []
-    }
+    self.entryList = { result:[]};
+    self.projectList = { result: []};
     
     self.addEntry = function (entryToAdd) {
         console.log('Adding Entry: ', entryToAdd);
@@ -20,22 +19,45 @@ app.service('ProjectService', ['$http', function ($http) {
         })
     }
 
-    self.getEntries = function () {
-        $http.get({
-            method: 'GET',
+    self.addProject = function (projectToAdd) {
+        console.log('Adding Project: ', projectToAdd);
+        $http({
+            method: 'POST',
             url: '/',
+            data: eprojectToAdd,
         }).then(function (response) {
             console.log(response);
-            self.entryList = response.data;
+            self.getProjects();
+        }).catch(function (error) {
+            console.log('Error: ', error);
+        })
+    }
+
+    self.getEntries = function () {
+        // console.log('in getEntries');
+        $http.get('/entries').then(function (response) {
+            console.log(response.data);
+            self.entryList.result = response.data;
+        }).catch(function (error) {
+            console.log('Error', error);
+        })
+    }
+
+    self.getProjects = function () {
+        $http.get('/projects').then(function (response) {
+            console.log(response);
+            self.projectList.result = response.data;
         }).catch(function (error) {
             console.log('Error', error);
         })
     }
 
     self.deleteEntry = function (id) {
+        console.log('delete clicked');
+        
         console.log(id);
         $http({
-            url: `/${id}`,
+            url: `/entries/${id}`,
             method: 'DELETE'
         }).then(function (response) {
             console.log(response);

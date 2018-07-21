@@ -1,6 +1,12 @@
 app.controller('ManageController', ['ProjectService', function (ProjectService){
     let self = this;
+    console.log('in MC');
 
-    self.getEntries = ProjectService.getEntries;
+    self.projectList = [];
+    self.projectList = ProjectService.projectList;
+    self.addProject = ProjectService.addProject;
+    self.getProjects = ProjectService.getProjects;
     self.deleteEntry = ProjectService.deleteEntry;
+
+    ProjectService.getProjects();
 }])

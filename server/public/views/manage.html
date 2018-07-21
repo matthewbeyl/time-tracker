@@ -1,1 +1,27 @@
-<h2>Manage Projects</h2>
+<h2>Add a Project</h2>
+<div class="form">
+    <input ng-model="vm.newProject.title" type="text" placeholder="New Title">
+    <input ng-model="vm.newProject.description" type="text" placeholder="Project Description">
+    <button ng-click="vm.addProject(newProject)">Add Project</button>
+</div>
+<hr>
+<h2>Active Projects</h2>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="project in vm.projectList.result">
+                <td>{{project.title}}</td>
+                <td>{{project.description}}</td>
+                <td>
+                    <button ng-click="vm.deleteEntry(entry.id)">DELETE</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
