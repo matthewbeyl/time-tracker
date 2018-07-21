@@ -6,6 +6,7 @@ app.controller('EntryController', ['ProjectService', function (ProjectService){
     self.entryList = ProjectService.entryList;
     self.addEntry = ProjectService.addEntry;
     self.getEntries = ProjectService.getEntries;
+    self.deleteEntry = ProjectService.deleteEntry;
 
     ProjectService.getEntries();
 }])
