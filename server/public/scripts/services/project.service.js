@@ -9,7 +9,7 @@ app.service('ProjectService', ['$http', function ($http) {
         console.log('Adding Entry: ', entryToAdd);
         $http({
             method: 'POST',
-            url: '/',
+            url: '/entries',
             data: entryToAdd,
         }).then(function (response) {
             console.log(response);
@@ -20,7 +20,7 @@ app.service('ProjectService', ['$http', function ($http) {
     }
 
     self.addProject = function (projectToAdd) {
-        console.log(`Adding Project: `, projectToAdd);
+        // console.log(`Adding Project: `, projectToAdd);
         $http({
             method: 'POST',
             url: '/projects',
@@ -36,7 +36,7 @@ app.service('ProjectService', ['$http', function ($http) {
     self.getEntries = function () {
         // console.log('in getEntries');
         $http.get('/entries').then(function (response) {
-            console.log(response.data);
+            // console.log(response.data);
             self.entryList.result = response.data;
         }).catch(function (error) {
             console.log('Error', error);
@@ -45,7 +45,7 @@ app.service('ProjectService', ['$http', function ($http) {
 
     self.getProjects = function () {
         $http.get('/projects').then(function (response) {
-            console.log(response);
+            // console.log(response);
             self.projectList.result = response.data;
         }).catch(function (error) {
             console.log('Error', error);
@@ -53,9 +53,8 @@ app.service('ProjectService', ['$http', function ($http) {
     }
 
     self.deleteEntry = function (id) {
-        console.log('delete clicked');
-        
-        console.log(id);
+        // console.log('delete clicked');
+        // console.log(id);
         $http({
             url: `/entries/${id}`,
             method: 'DELETE'
@@ -68,9 +67,8 @@ app.service('ProjectService', ['$http', function ($http) {
     }
 
     self.deleteProject = function (id) {
-        console.log('delete clicked');
-        
-        console.log(id);
+        // console.log('delete clicked');
+        // console.log(id);
         $http({
             url: `/projects/${id}`,
             method: 'DELETE'

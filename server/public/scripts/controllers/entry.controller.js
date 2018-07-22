@@ -1,6 +1,6 @@
 app.controller('EntryController', ['ProjectService', function (ProjectService){
     let self = this;
-    console.log('in EC');
+    // console.log('in EC');
     
     self.entryList = [];
     self.entryList = ProjectService.entryList;

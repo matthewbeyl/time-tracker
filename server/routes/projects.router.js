@@ -3,17 +3,19 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 router.get('/', (req, res) => {
-    console.log('Router GET');
+    // console.log('Router GET');
     pool.query(`SELECT * FROM "projects";`)
         .then((results) => {
             console.log(results);
             res.send(results.rows)
+        }).catch((error) => {
+            console.log('Error:', error);
         })
 });
 
 router.post('/', (req, res) => {
-    console.log('Router POST');
-    console.log(req.body);
+    // console.log('Router POST');
+    // console.log(req.body);
     pool.query(`INSERT INTO "projects"
     ("title", "description")
     VALUES ($1, $2);`, [req.body.title, req.body.description])
@@ -27,8 +29,8 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    console.log('DELETE');
-    console.log(req.params.id);
+    // console.log('DELETE');
+    // console.log(req.params.id);
 
     pool.query(`DELETE FROM "projects" WHERE "id" = $1;`, [req.params.id])
         .then((results) => {
