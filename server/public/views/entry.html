@@ -1,10 +1,11 @@
 <h2>New Entry</h2>
 
-<div class="form">
-    <!-- <select ng-model="vm.newEntry.project_id" name="Project Name">
-        <option ng-repeat="project in vm.projectList.result" value="{{projects.id}}">{{projects.title}}</option>
-    </select> -->
-    <input ng-model="vm.newEntry.project" type="text" placeholder="Project Title">
+<div>
+    <select ng-model="vm.newEntry.project_id">
+        <option disable selected value>Project Name</option>
+        <option ng-repeat="project in vm.projectList.result" value="{{project.id}}">{{project.title}}</option>
+    </select>
+    <!-- <input ng-model="vm.newEntry.project" type="text" placeholder="Project Title"> -->
     <input ng-model="vm.newEntry.notes" type="text" placeholder="Notes...">
     <input ng-model="vm.newEntry.date" type="text" placeholder="mm/dd/yyyy">
     <input ng-model="vm.newEntry.time" type="text" placeholder="Time Spent (hrs)">
