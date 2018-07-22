@@ -36,6 +36,8 @@ router.delete('/:id', (req, res) => {
         .then((results) => {
             console.log('results from delete', results);
             res.sendStatus(200);
+        }).catch((error) => {
+            console.log(error);
         })
 })
 
