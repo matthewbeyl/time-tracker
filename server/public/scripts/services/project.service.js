@@ -53,8 +53,8 @@ app.service('ProjectService', ['$http', function ($http) {
     }
 
     self.deleteEntry = function (id) {
-        // console.log('delete clicked');
-        // console.log(id);
+        console.log('delete clicked');
+        console.log(id);
         $http({
             url: `/entries/${id}`,
             method: 'DELETE'

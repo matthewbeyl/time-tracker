@@ -9,7 +9,8 @@ app.controller('EntryController', ['ProjectService', function (ProjectService){
     self.addEntry = ProjectService.addEntry;
     self.getEntries = ProjectService.getEntries;
     self.deleteEntry = ProjectService.deleteEntry;
+    self.getProjects = ProjectService.getProjects;
 
     ProjectService.getEntries();
-
+    ProjectService.getProjects();
 }])

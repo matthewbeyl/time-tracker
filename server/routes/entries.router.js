@@ -4,7 +4,8 @@ const pool = require('../modules/pool');
 
 router.get('/', (req, res) => {
     // console.log('Router GET');
-    pool.query(`SELECT * FROM "projects" JOIN "entry" ON "projects"."id" = "entry"."project_id";`)
+    // pool.query(`SELECT * FROM "projects" JOIN "entry" ON "projects"."id" = "entry"."project_id";`)
+    pool.query(`SELECT "entry"."id", "notes", "title", DATE("date") as "date", "time" FROM "projects" JOIN "entry" ON "projects"."id" = "entry"."project_id";`)
         .then((results) => {
             console.log(results);
             res.send(results.rows)
@@ -36,7 +37,9 @@ router.delete('/:id', (req, res) => {
         .then((results) => {
             console.log('results from delete', results);
             res.sendStatus(200);
-        })
+        }).catch((error) => {
+            console.log(error, req.params.id);
+        });
 })
 
 module.exports = router;

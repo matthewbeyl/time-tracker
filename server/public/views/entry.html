@@ -7,8 +7,8 @@
     </select>
     <!-- <input ng-model="vm.newEntry.project" type="text" placeholder="Project Title"> -->
     <input ng-model="vm.newEntry.notes" type="text" placeholder="Notes...">
-    <input ng-model="vm.newEntry.date" type="text" placeholder="mm/dd/yyyy">
-    <input ng-model="vm.newEntry.time" type="text" placeholder="Time Spent (hrs)">
+    <input ng-model="vm.newEntry.date" type="date" placeholder="mm/dd/yyyy">
+    <input ng-model="vm.newEntry.time" type="number" placeholder="Time Spent (hrs)">
     <button ng-click="vm.addEntry(vm.newEntry)">ADD</button>
 </div>
 <h2>Recent Entries</h2>
@@ -19,16 +19,18 @@
                 <th>Notes</th>
                 <th>Project</th>
                 <th>Date</th>
-                <th>Time</th>
+                <th>Hours </th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="entry in vm.entryList.result">
                 <td>{{entry.notes}}</td>
-                <td>{{entry.project}}</td>
+                <td>{{entry.title}}</td>
+                <!-- <td>{{entry.date.split('T05')[0]}}</td> -->
                 <td>{{entry.date}}</td>
                 <td>{{entry.time}}</td>
                 <td>
+                    <!-- <md-button class="md-warn md-raised md-hue-2" ng-click="vm.deleteEntry(entry.id)">DELETE</md-button> -->
                     <button ng-click="vm.deleteEntry(entry.id)">DELETE</button>
                 </td>
             </tr>
