@@ -1,18 +1,22 @@
 <h2>New Entry</h2>
 
-<div>
-    <select ng-model="vm.newEntry.project_id">
-        <option disable selected value>Project Name</option>
-        <option ng-repeat="project in vm.projectList.result" value="{{project.id}}">{{project.title}}</option>
-    </select>
-    <!-- <input ng-model="vm.newEntry.project" type="text" placeholder="Project Title"> -->
-    <input ng-model="vm.newEntry.notes" type="text" placeholder="Notes...">
-    <input ng-model="vm.newEntry.date" type="date" placeholder="mm/dd/yyyy">
-    <input ng-model="vm.newEntry.time" type="number" placeholder="Time Spent (hrs)">
-    <button ng-click="vm.addEntry(vm.newEntry)">ADD</button>
-</div>
+<!-- <md-content> -->
+<form>
+    <div class="form-row">
+        <select ng-model="vm.newEntry.project_id">
+            <option disable selected value>Project Name</option>
+            <option ng-repeat="project in vm.projectList.result" value="{{project.id}}">{{project.title}}</option>
+        </select>
+        <!-- <input ng-model="vm.newEntry.project" type="text" placeholder="Project Title"> -->
+        <input ng-model="vm.newEntry.notes" type="text" placeholder="Notes...">
+        <input ng-model="vm.newEntry.date" type="date" placeholder="mm/dd/yyyy">
+        <!-- <md-datepicker ng-model="vm.newEntry.date" md-placeholder="Enter date" md-open-on-focus></md-datepicker> -->
+        <input ng-model="vm.newEntry.time" type="number" placeholder="Time Spent (hrs)">
+        <button class="btn btn-outline-dark" ng-click="vm.addEntry(vm.newEntry)">ADD</button>
+    </div>
+</form>
 <h2>Recent Entries</h2>
-<div>
+<div class="table table-striped table-hover">
     <table>
         <thead>
             <tr>
@@ -31,9 +35,12 @@
                 <td>{{entry.time}}</td>
                 <td>
                     <!-- <md-button class="md-warn md-raised md-hue-2" ng-click="vm.deleteEntry(entry.id)">DELETE</md-button> -->
-                    <button ng-click="vm.deleteEntry(entry.id)">DELETE</button>
+                    <!-- <button >DELETE</button> -->
+                    <button ng-click="vm.deleteEntry(entry.id)" type="button" class="btn btn-danger btn-sm">DELETE</button>
+
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
+<!-- </md-content> -->

@@ -1,3 +1,15 @@
 ul {
     list-style-type: none;
 }
+
+#background {
+    background: linear-gradient(to bottom, transparent 0%,#616161 50%,transparent 100%);
+}
+
+table {
+    background-color: #BDBDBD
+}
+
+.container {
+    align-content: center;
+}

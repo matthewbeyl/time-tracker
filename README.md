@@ -1,12 +1,18 @@
-<!-- CREATE DATABASE "weekend5" -->
+CREATE DATABASE "weekend5"
 
-<!-- CREATE TABLE projects(
+CREATE TABLE projects(
     id SERIAL PRIMARY KEY,
     title VARCHAR(20),
-    entry TEXT,
-    date VARCHAR(20)
-    time VARCHAR(20)  
-); -->
+    description TEXT 
+);
+
+CREATE TABLE entry(
+    id SERIAL PRIMARY KEY,
+    project_id INT REFERENCES "projects",
+    notes TEXT,
+    date INT,
+    time INT  
+);
 
 <!-- dummy data
 INSERT INTO "projects" ("title", "entry", "date", "time")
