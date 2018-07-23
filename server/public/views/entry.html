@@ -26,8 +26,8 @@
             <tr ng-repeat="entry in vm.entryList.result">
                 <td>{{entry.notes}}</td>
                 <td>{{entry.title}}</td>
-                <td>{{entry.date.split('T05')[0]}}</td>
-                <!-- <td>{{entry.date}}</td> -->
+                <!-- <td>{{entry.date.split('T05')[0]}}</td> -->
+                <td>{{entry.date | date: 'shortDate'}}</td>
                 <td>{{entry.time}}</td>
                 <td>
                     <!-- <md-button class="md-warn md-raised md-hue-2" ng-click="vm.deleteEntry(entry.id)">DELETE</md-button> -->

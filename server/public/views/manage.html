@@ -12,12 +12,14 @@
             <tr>
                 <th>Title</th>
                 <th>Description</th>
+                <th>Time</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="project in vm.projectList.result">
                 <td>{{project.title}}</td>
                 <td>{{project.description}}</td>
+                
                 <td>
                     <button ng-click="vm.deleteProject(project.id)">DELETE</button>
                 </td>
