@@ -55,6 +55,12 @@ app.service('ProjectService', ['$http', function ($http) {
     self.deleteEntry = function (id) {
         console.log('delete clicked');
         console.log(id);
+        swal({
+            title: "WAIT!",
+            text: "Are you sure you are done with this?",
+            buttons: true,
+            dangerMode: true
+        })
         $http({
             url: `/entries/${id}`,
             method: 'DELETE'
@@ -69,6 +75,12 @@ app.service('ProjectService', ['$http', function ($http) {
     self.deleteProject = function (id) {
         // console.log('delete clicked');
         // console.log(id);
+        swal({
+            title: "WAIT!",
+            text: "Are you sure you are done with this?",
+            buttons: true,
+            dangerMode: true
+        })
         $http({
             url: `/projects/${id}`,
             method: 'DELETE'
